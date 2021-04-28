@@ -30,8 +30,6 @@ class Place:
         self.entrance = None  # A Place
         # Phase 1: Add an entrance to the exit
         "*** YOUR CODE HERE ***"
-        if exist:
-            exist.entrance = self
 
     def add_insect(self, insect):
         """Add an Insect to this Place.
@@ -165,6 +163,7 @@ class HarvesterAnt(Ant):
         colony -- The AntColony, used to access game state information.
         """
         "*** YOUR CODE HERE ***"
+        colony.food += 1
 
 def random_or_none(l):
     """Return a random element of list l, or return None if l is empty."""
