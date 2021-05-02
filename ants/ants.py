@@ -485,7 +485,7 @@ class FireAnt(Ant):
     damage = 3
     "*** YOUR CODE HERE ***"
     implemented = True
-    food_cost = 4 #Do you need to have this since its already in the base class?
+    food_cost = 4
 
     def reduce_armor(self, amount):
         "*** YOUR CODE HERE ***"
