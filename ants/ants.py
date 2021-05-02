@@ -503,7 +503,8 @@ class LongThrower(ThrowerAnt):
 
     name = 'Long'
     "*** YOUR CODE HERE ***"
-    implemented = False
+    implemented = True
+    min_range = 4
 
 
 class ShortThrower(ThrowerAnt):
@@ -511,7 +512,8 @@ class ShortThrower(ThrowerAnt):
 
     name = 'Short'
     "*** YOUR CODE HERE ***"
-    implemented = False
+    implemented = True
+    max_range = 2
 
 
 class WallAnt(Ant):
