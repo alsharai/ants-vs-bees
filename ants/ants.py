@@ -465,10 +465,17 @@ class FireAnt(Ant):
     name = 'Fire'
     damage = 3
     "*** YOUR CODE HERE ***"
-    implemented = False
+    implemented = True
 
     def reduce_armor(self, amount):
         "*** YOUR CODE HERE ***"
+        self.reduce_armor(1)
+
+        if self.armor <= 0:
+            bees_lst = list(self.Place.bees) # list to go over while modifying the original
+            for bee in bees_lst:
+                bee.reduce_armor(damage)
+            self.remove_insect(self) # remove Fireant because its armor reached 0 or lower
 
 
 class LongThrower(ThrowerAnt):
