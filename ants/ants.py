@@ -485,7 +485,7 @@ class FireAnt(Ant):
     damage = 3
     "*** YOUR CODE HERE ***"
     implemented = True
-    food_cost = 4
+    food_cost = 4 #Do you need to have this since its already in the base class?
 
     def reduce_armor(self, amount):
         "*** YOUR CODE HERE ***"
@@ -505,6 +505,7 @@ class LongThrower(ThrowerAnt):
     "*** YOUR CODE HERE ***"
     implemented = True
     min_range = 4
+    food_cost = 3
 
 
 class ShortThrower(ThrowerAnt):
@@ -514,6 +515,7 @@ class ShortThrower(ThrowerAnt):
     "*** YOUR CODE HERE ***"
     implemented = True
     max_range = 2
+    food_cost = 3
 
 
 class WallAnt(Ant):
