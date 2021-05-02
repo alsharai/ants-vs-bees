@@ -500,10 +500,12 @@ class WallAnt(Ant):
     name = 'Wall'
     "*** YOUR CODE HERE ***"
     implemented = False
+    food_cost = 4
 
     def __init__(self):
         "*** YOUR CODE HERE ***"
-        Ant.__init__(self)
+        armor_power = 4
+        Ant.__init__(self, armor_power)
 
 
 class NinjaAnt(Ant):
