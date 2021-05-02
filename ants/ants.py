@@ -469,7 +469,7 @@ class FireAnt(Ant):
 
     def reduce_armor(self, amount):
         "*** YOUR CODE HERE ***"
-        self.reduce_armor(1)
+        self.reduce_armor(amount)
 
         if self.armor <= 0:
             bees_lst = list(self.Place.bees) # list to go over while modifying the original
