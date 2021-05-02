@@ -516,7 +516,7 @@ class NinjaAnt(Ant):
 
     name = 'Ninja'
     "*** YOUR CODE HERE ***"
-    implemented = False
+    implemented = True
     blocks_path = False # NinjaAnt does not block bees from passing through their places
     food_cost = 6
     damage = 1
