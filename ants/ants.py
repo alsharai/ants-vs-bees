@@ -125,7 +125,7 @@ class Bee(Insect):
         """Return True if this Bee cannot advance to the next Place."""
         # Phase 2: Special handling for NinjaAnt
         "*** YOUR CODE HERE ***"
-        return (self.place.ant is not None) or (self.place.ant.blocks_path == True)
+        return (self.place.ant is not None) and (self.place.ant.blocks_path == True)
 
     def action(self, colony):
         """A Bee's action stings the Ant that blocks its exit if it is blocked,
