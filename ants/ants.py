@@ -69,6 +69,8 @@ class Place:
 class Insect:
     """An Insect, the base class of Ant and Bee, has armor and a Place."""
 
+    watersafe = False # indicate whethere an insect is safe to be in a water place
+
     def __init__(self, armor, place=None):
         """Create an Insect with an armor amount and a starting Place."""
         self.armor = armor
@@ -108,6 +110,7 @@ class Bee(Insect):
     """A Bee moves from place to place, following exits and stinging ants."""
 
     name = 'Bee'
+    watersafe = True 
 
     def sting(self, ant):
         """Attack an Ant, reducing the Ant's armor by 1."""
@@ -224,6 +227,8 @@ class Hive(Place):
         exits = [p for p in colony.places.values() if p.entrance is self]
         for bee in self.assault_plan.get(colony.time, []):
             bee.move_to(random.choice(exits))
+
+
 
 
 class AntColony:
@@ -449,6 +454,9 @@ class Water(Place):
         """Add insect if it is watersafe, otherwise reduce its armor to 0."""
         print('added', insect, insect.watersafe)
         "*** YOUR CODE HERE ***"
+        insect.add_insect
+        if not insect.watersafe:
+            insect.reduce_armor(insect.armor)
 
 
 class FireAnt(Ant):
