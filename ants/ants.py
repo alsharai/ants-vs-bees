@@ -467,6 +467,7 @@ class FireAnt(Ant):
     damage = 3
     "*** YOUR CODE HERE ***"
     implemented = True
+    food_cost = 4
 
     def reduce_armor(self, amount):
         "*** YOUR CODE HERE ***"
