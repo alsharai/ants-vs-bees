@@ -202,7 +202,7 @@ class ThrowerAnt(Ant):
         while place != hive:
             if self.min_range <= places_away and self.max_range >= places_away:
                 within_range = True
-            else
+            else:
                 within_range = False
 
             if random_or_none(place.bees) != None and within_range: #there are some ants in current place and its within range
