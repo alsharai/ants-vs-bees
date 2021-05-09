@@ -66,8 +66,7 @@ class Place:
     def remove_insect(self, insect):
         """Remove an Insect from this Place."""
         
-        if insect.name == 'Queen': #Still figuring it out 
-            pass
+        if insect.name == 'Queen' #Still figuring it out 
 
         if not insect.is_ant():
             self.bees.remove(insect)
@@ -641,7 +640,7 @@ class QueenPlace:
     @property
     def bees(self):
         "*** YOUR CODE HERE ***"
-        #return lst = new_ant_queen.bees + original_colony_queen.ants #not sure if it should return or just create
+        return lst = new_ant_queen.bees + original_colony_queen.ants #not sure if it should return or just create
 
 
 class QueenAnt(ScubaThrower):
