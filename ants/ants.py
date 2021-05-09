@@ -110,7 +110,7 @@ class Bee(Insect):
     """A Bee moves from place to place, following exits and stinging ants."""
 
     name = 'Bee'
-    watersafe = True 
+    watersafe = True
 
     def sting(self, ant):
         """Attack an Ant, reducing the Ant's armor by 1."""
