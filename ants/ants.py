@@ -53,6 +53,9 @@ class Place:
 
     def remove_insect(self, insect):
         """Remove an Insect from this Place."""
+        
+        if insect.name == 'Queen' #Still figuring it out 
+
         if not insect.is_ant():
             self.bees.remove(insect)
         else:
@@ -618,10 +621,14 @@ class QueenPlace:
     """
     def __init__(self, colony_queen, ant_queen):
         "*** YOUR CODE HERE ***"
+        original_colony_queen = colony_queen
+        new_ant_queen = ant_queen
 
     @property
     def bees(self):
         "*** YOUR CODE HERE ***"
+        return lst = new_ant_queen.bees + original_colony_queen.ants #not sure if it should return or just create
+
 
 class QueenAnt(ScubaThrower):
     """The Queen of the colony.  The game is over if a bee enters her place."""
@@ -629,15 +636,28 @@ class QueenAnt(ScubaThrower):
     name = 'Queen'
     "*** YOUR CODE HERE ***"
     implemented = False
+    num_of_queens = 0
+    imposter = False
 
     def __init__(self):
         ScubaThrower.__init__(self, 1)
         "*** YOUR CODE HERE ***"
+        self.num_of_queens += 1
+        if self.num_of_queens > 1:
+            self.imposter = True
+
+
 
     def action(self, colony):
         """A queen ant throws a leaf, but also doubles the damage of ants
         in her tunnel.  Impostor queens do only one thing: die."""
         "*** YOUR CODE HERE ***"
+        if self.imposter:
+            self.reduce_armor(self.armor)
+            self.num_of_queens -= 1
+        colony.queen = QueenPlace(self.colony.queen, self)
+
+
 
 class AntRemover(Ant):
     """Allows the player to remove ants from the board in the GUI."""
