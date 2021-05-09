@@ -200,12 +200,13 @@ class ThrowerAnt(Ant):
         place = self.place #changing self.place will change the position of the ant itself
 
         while place != hive:
+            within_range = False
+
             if self.min_range <= places_away and self.max_range >= places_away:
                 within_range = True
-            else:
-                within_range = False
+            r_pa = random_or_none(place.bees)
 
-            if random_or_none(place.bees) != None and within_range: #there are some ants in current place and its within range
+            if r_pa != None and within_range: #there are some ants in current place and its within range
                 return random_or_none(place.bees) #if there are any bees, return a random bee
             else: #Either there are no bees or the place its not within range of the ant
                 place = place.entrance # move to the next place
