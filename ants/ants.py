@@ -110,7 +110,7 @@ class Bee(Insect):
     """A Bee moves from place to place, following exits and stinging ants."""
 
     name = 'Bee'
-    watersafe = True 
+    watersafe = True
 
     def sting(self, ant):
         """Attack an Ant, reducing the Ant's armor by 1."""
@@ -558,7 +558,9 @@ class ScubaThrower(ThrowerAnt):
 
     name = 'Scuba'
     "*** YOUR CODE HERE ***"
-    implemented = False
+    food_cost = 5
+    watersafe = True
+    
 
 
 class HungryAnt(Ant):
@@ -567,17 +569,30 @@ class HungryAnt(Ant):
     """
     name = 'Hungry'
     "*** YOUR CODE HERE ***"
-    implemented = False
+    food_cost = 4
+    time_to_digest = 3
+    implemented = True
 
     def __init__(self):
         Ant.__init__(self)
         "*** YOUR CODE HERE ***"
+        self.digesting = 0 
 
     def eat_bee(self, bee):
         "*** YOUR CODE HERE ***"
+        bee.reduce_armor(bee.armor) #completeley kills the bees
+        self.digesting = self.time_to_digest #Takes three turns for it to digest
+
 
     def action(self, colony):
         "*** YOUR CODE HERE ***"
+        if self.digesting > 0: #If digesting any bee
+            self.digesting -= 1 #decrease its digesting time
+        else: #Not currently digesting any bees
+            if random_or_none(self.place.bees) != None: #Check if its place has any bees
+                target = random_or_none(self.place.bees) #assigning a bee found to target
+                self.eat_bee(target) #call the eat_bee function for the target found
+
 
 
 class BodyguardAnt(Ant):
